@@ -4,10 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const sidebarItems = [
-  { href: "/", label: "Home", icon: "🏠" },
-  { href: "/about", label: "About", icon: "👤" },
-  { href: "/projects", label: "Projects", icon: "💼" },
-  { href: "/contact", label: "Contact", icon: "✉️" },
+  { href: "/", label: "Home"},
+  { href: "/about", label: "About"},
+  { href: "/projects", label: "Projects"},
+  { href: "/contact", label: "Contact"},
 ];
 
 export default function Sidebar() {
@@ -29,7 +29,6 @@ export default function Sidebar() {
                     : "text-slate-600 hover:bg-slate-50 hover:text-slate-900")
                 }
               >
-                <span className="text-lg">{item.icon}</span>
                 <span className="font-medium">{item.label}</span>
               </Link>
             </li>

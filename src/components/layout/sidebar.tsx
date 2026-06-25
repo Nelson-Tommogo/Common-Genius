@@ -8,7 +8,7 @@ const navItems = [
   { href: '/', label: 'Home', icon: MdHome },
   { href: '/stack', label: 'Stack', icon: MdCode },
   { href: '/projects', label: 'Projects', icon: MdWork },
-  { href: '/contact', label: 'Contact', icon: MdContactMail },
+  { href: '/contacts', label: 'Contact', icon: MdContactMail },
 ];
 
 export default function Sidebar() {

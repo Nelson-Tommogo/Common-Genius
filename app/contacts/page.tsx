@@ -28,31 +28,31 @@ export default function ContactPage() {
             <FaPhoneAlt style={styles.icon} />
             <div>
               <h2 style={styles.cardTitle}>Phone</h2>
-              <p>+1 (234) 567-890</p>
+              <p>+254759735505</p>
             </div>
           </a>
 
-          <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" style={styles.cardItem}>
+          <a href="https://github.com/nelson-tommogo" target="_blank" rel="noreferrer" style={styles.cardItem}>
             <FaGithub style={styles.icon} />
             <div>
               <h2 style={styles.cardTitle}>GitHub</h2>
-              <p>github.com/yourusername</p>
+              <p>github.com/nelson-tommogo</p>
             </div>
           </a>
 
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer" style={styles.cardItem}>
+          <a href="https://linkedin.com/in/nelson-tommogo" target="_blank" rel="noreferrer" style={styles.cardItem}>
             <FaLinkedin style={styles.icon} />
             <div>
               <h2 style={styles.cardTitle}>LinkedIn</h2>
-              <p>linkedin.com/in/yourusername</p>
+              <p>linkedin.com/in/nelson-tommogo</p>
             </div>
           </a>
 
-          <a href="https://twitter.com/yourusername" target="_blank" rel="noreferrer" style={styles.cardItem}>
+          <a href="https://twitter.com/nelson_tommogo" target="_blank" rel="noreferrer" style={styles.cardItem}>
             <FaTwitter style={styles.icon} />
             <div>
               <h2 style={styles.cardTitle}>X</h2>
-              <p>@yourusername</p>
+              <p>@nelson_tommogo</p>
             </div>
           </a>
 
@@ -63,11 +63,6 @@ export default function ContactPage() {
               <p>yourwebsite.com</p>
             </div>
           </a>
-        </div>
-
-        <div style={styles.footer}>
-          <FaMapMarkerAlt style={styles.locationIcon} />
-          <span>Based in San Francisco, CA • Available for remote and local opportunities</span>
         </div>
       </section>
     </main>

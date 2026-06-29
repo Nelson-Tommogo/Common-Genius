@@ -1,36 +1,34 @@
 // app/components/ServicesCarousel.tsx
 "use client";
 
+import router from "next/router";
 import { useState, useEffect } from "react";
 
+// Services data with Cloudinary images
 const services = [
   { 
     id: 1, 
     name: "Mobile Development", 
     description: "Building responsive and high-performance mobile applications for iOS and Android platforms.",
-    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757871/web_yroiac.jpg",
-    experience: 5 
+    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757871/web_yroiac.jpg"
   },
   { 
     id: 2, 
     name: "Web Development", 
     description: "Creating dynamic and interactive web applications using modern frameworks and technologies.",
-    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757870/web1_xhqeki.jpg",
-    experience: 5
+    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757870/web1_xhqeki.jpg"
   },
   { 
     id: 3, 
     name: "UI/UX Design", 
     description: "Designing user-friendly interfaces and experiences that enhance usability and engagement.",
-    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757869/web2_rmbj5h.jpg",
-    experience: 5
+    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757869/web2_rmbj5h.jpg"
   },
   { 
     id: 4, 
     name: "Backend Development", 
     description: "Developing robust server-side logic, APIs, and database management for seamless application functionality.",
-    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757869/web3_a1hqvb.jpg",
-    experience: 5
+    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757869/web3_a1hqvb.jpg"
   },
 ];
 
@@ -40,7 +38,7 @@ export default function ServicesCarousel() {
 
   // Calculate years of experience based on current year
   useEffect(() => {
-    const startYear = 2021; 
+    const startYear = 2021; // Started in 2021
     const currentYear = new Date().getFullYear();
     const experience = currentYear - startYear;
     setYearsOfExperience(experience);
@@ -69,12 +67,8 @@ export default function ServicesCarousel() {
     setCurrentIndex(index);
   };
 
-  // Scroll to contact section
   const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    router.push('/contacts');
   };
 
   const currentService = services[currentIndex];
@@ -98,7 +92,7 @@ export default function ServicesCarousel() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent md:bg-gradient-to-r md:from-black/50 md:via-transparent md:to-transparent"></div>
             
             {/* Years of Experience Flag */}
-            <div className="absolute top-4 left-4 bg-blue-900/90 text-white px-4 py-2 rounded-lg backdrop-blur-sm flex items-center gap-2 shadow-lg">
+            <div className="absolute top-4 left-4 bg-blue-900/90 text-white px-4 py-2 rounded-lg backdrop-blur-sm flex items-center gap-2 shadow-lg border border-blue-400/20">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -123,7 +117,7 @@ export default function ServicesCarousel() {
             </p>
 
             {/* Experience Badge - Mobile Only */}
-            <div className="md:hidden bg-blue-50 text-blue-900 px-4 py-2 rounded-lg mb-4 flex items-center gap-2 self-start">
+            <div className="md:hidden bg-blue-50 text-blue-900 px-4 py-2 rounded-lg mb-4 flex items-center gap-2 self-start border border-blue-100">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>

@@ -1,3 +1,4 @@
+"use client";
 import { FaGithub, FaLinkedin, FaTwitter, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa';
 
 export default function ContactPage() {

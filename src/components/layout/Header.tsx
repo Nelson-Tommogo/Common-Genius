@@ -33,8 +33,7 @@ export default function TopBar() {
       <div className="h-full flex items-center justify-between px-6 max-w-7xl mx-auto">
         {/* Brand/Logo section */}
         <div className="flex items-center gap-3">
-          <h2 className="text-xl font-bold text-black">Nelson Tommogo(CG)</h2>
-          <div className="w-1 h-1 bg-blue-500 rounded-full top-10"></div>
+          <h2 className="text-xl font-bold text-black">Nelson Tommogo</h2>
         </div>
         
         {/* Navigation links */}

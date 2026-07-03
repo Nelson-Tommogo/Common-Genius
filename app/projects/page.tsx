@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, SetStateAction } from 'react';
 
 const projects = [
   {
@@ -51,7 +51,7 @@ export default function ProjectsPage() {
 
   const goToPrevious = () => setCurrentIndex((prev) => prev === 0 ? totalSlides - 1 : prev - 1);
   const goToNext = () => setCurrentIndex((prev) => prev === totalSlides - 1 ? 0 : prev + 1);
-  const goToSlide = (index) => setCurrentIndex(index);
+  const goToSlide = (index: SetStateAction<number>) => setCurrentIndex(index);
 
   const getVisibleProjects = () => {
     const start = currentIndex * projectsPerView;

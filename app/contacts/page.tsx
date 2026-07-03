@@ -1,159 +1,200 @@
 "use client";
-import { FaGithub, FaLinkedin, FaTwitter, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa';
+import { useState } from 'react';
+import { 
+  FaGithub, 
+  FaLinkedin, 
+  FaEnvelope, 
+  FaPhoneAlt, 
+  FaMapMarkerAlt, 
+  FaPaperPlane 
+} from 'react-icons/fa';
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  };
+
   return (
-    <main style={styles.page}>
-      <section style={styles.card}>
-        <div style={styles.header}>
-          <div>
-            <p style={styles.overline}>Get in touch</p>
-            <h1 style={styles.title}>Contact Me</h1>
-            <p style={styles.subtitle}>
-              I&apos;m a software developer focused on building clean, accessible, and scalable web applications.
-              Reach out for collaboration, freelance work, or just a friendly tech chat.
-            </p>
+    <main className="min-h-screen bg-[#fcfcfc] flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-6xl">
+        
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="h-[2px] w-8 bg-blue-900"></span>
+            <span className="text-blue-900 font-semibold tracking-widest text-sm uppercase">Get in touch</span>
+            <span className="h-[2px] w-8 bg-blue-900"></span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            Let's Work Together
+          </h1>
+          <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            Open to new opportunities and collaborations. Whether you have a project in mind or just want to connect, feel free to reach out.
+          </p>
+        </div>
+
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          {/* Left Column - Contact Info */}
+          <div className="flex flex-col gap-6">
+            
+            {/* Email Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] flex items-center gap-5">
+              <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-900 text-xl shrink-0">
+                <FaEnvelope />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Email</p>
+                <p className="text-slate-800 font-medium">nelsontommogo9@gmail.com</p>
+              </div>
+            </div>
+
+            {/* Phone Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] flex items-center gap-5">
+              <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-900 text-xl shrink-0">
+                <FaPhoneAlt />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Phone</p>
+                <p className="text-slate-800 font-medium">+254 759735505</p>
+              </div>
+            </div>
+
+            {/* Location Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] flex items-center gap-5">
+              <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-900 text-xl shrink-0">
+                <FaMapMarkerAlt />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">Location</p>
+                <p className="text-slate-800 font-medium">Nairobi, Kenya</p>
+              </div>
+            </div>
+
+            {/* Social Card */}
+            <div className="bg-white rounded-2xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] flex-1">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4">Find me online</p>
+              <div className="flex gap-4">
+                <a 
+                  href="https://www.linkedin.com/in/nelson-tommogo/" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-xl bg-[#f1f3f6] hover:bg-blue-100 flex items-center justify-center text-slate-800 hover:text-blue-900 transition-colors"
+                >
+                  <FaLinkedin className="text-xl" />
+                </a>
+                <a 
+                  href="https://github.com/Nelson-Tommogo" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-xl bg-[#f1f3f6] hover:bg-blue-100 flex items-center justify-center text-slate-800 hover:text-blue-900 transition-colors"
+                >
+                  <FaGithub className="text-xl" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Contact Form */}
+          <div className="bg-white rounded-3xl p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              
+              {/* Name & Email Row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label htmlFor="name" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition-all placeholder:text-slate-300"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition-all placeholder:text-slate-300"
+                    placeholder="you@example.com"
+                  />
+                </div>
+              </div>
+
+              {/* Subject Field */}
+              <div>
+                <label htmlFor="subject" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition-all placeholder:text-slate-300"
+                  placeholder="What's this about?"
+                />
+              </div>
+
+              {/* Message Field */}
+              <div>
+                <label htmlFor="message" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:ring-2 focus:ring-blue-900 focus:border-blue-900 outline-none transition-all resize-none placeholder:text-slate-300"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-800 to-blue-900 text-white font-semibold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:shadow-lg hover:from-blue-900 hover:to-slate-900 transition-all"
+              >
+                <FaPaperPlane className="text-sm" />
+                Send Message
+              </button>
+
+            </form>
           </div>
         </div>
-
-        <div style={styles.grid}>
-          <a href="mailto:hello@example.com" style={styles.cardItem}>
-            <FaEnvelope style={styles.icon} />
-            <div>
-              <h2 style={styles.cardTitle}>Email</h2>
-              <p>hello@example.com</p>
-            </div>
-          </a>
-
-          <a href="tel:+1234567890" style={styles.cardItem}>
-            <FaPhoneAlt style={styles.icon} />
-            <div>
-              <h2 style={styles.cardTitle}>Phone</h2>
-              <p>+254759735505</p>
-            </div>
-          </a>
-
-          <a href="https://github.com/nelson-tommogo" target="_blank" rel="noreferrer" style={styles.cardItem}>
-            <FaGithub style={styles.icon} />
-            <div>
-              <h2 style={styles.cardTitle}>GitHub</h2>
-              <p>github.com/nelson-tommogo</p>
-            </div>
-          </a>
-
-          <a href="https://linkedin.com/in/nelson-tommogo" target="_blank" rel="noreferrer" style={styles.cardItem}>
-            <FaLinkedin style={styles.icon} />
-            <div>
-              <h2 style={styles.cardTitle}>LinkedIn</h2>
-              <p>linkedin.com/in/nelson-tommogo</p>
-            </div>
-          </a>
-
-          <a href="https://twitter.com/nelson_tommogo" target="_blank" rel="noreferrer" style={styles.cardItem}>
-            <FaTwitter style={styles.icon} />
-            <div>
-              <h2 style={styles.cardTitle}>X</h2>
-              <p>@nelson_tommogo</p>
-            </div>
-          </a>
-
-          <a href="https://yourwebsite.com" target="_blank" rel="noreferrer" style={styles.cardItem}>
-            <FaGlobe style={styles.icon} />
-            <div>
-              <h2 style={styles.cardTitle}>Portfolio</h2>
-              <p>yourwebsite.com</p>
-            </div>
-          </a>
-        </div>
-      </section>
+      </div>
     </main>
   );
 }
-
-const styles: { [key: string]: React.CSSProperties } = {
-  page: {
-    minHeight: '100vh',
-    padding: '40px 24px',
-    display: 'flex',
-    justifyContent: 'center',
-    background: '#f5f7fb',
-  },
-  card: {
-    width: '100%',
-    maxWidth: '860px',
-    background: '#ffffff',
-    borderRadius: '24px',
-    boxShadow: '0 24px 80px rgba(13, 26, 65, 0.08)',
-    padding: '36px',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '28px',
-  },
-  header: {
-    display: 'flex',
-    gap: '24px',
-    alignItems: 'flex-start',
-  },
-  overline: {
-    margin: 0,
-    fontSize: '0.85rem',
-    letterSpacing: '0.16em',
-    textTransform: 'uppercase',
-    color: '#4f6d9b',
-  },
-  title: {
-    margin: '12px 0 8px',
-    fontSize: '2.4rem',
-    lineHeight: 1.05,
-    color: '#0f172a',
-  },
-  subtitle: {
-    margin: 0,
-    maxWidth: '680px',
-    fontSize: '1rem',
-    lineHeight: 1.7,
-    color: '#52627c',
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-    gap: '18px',
-  },
-  cardItem: {
-    display: 'flex',
-    alignItems: 'flex-start',
-    gap: '16px',
-    padding: '20px',
-    borderRadius: '18px',
-    border: '1px solid rgba(79, 109, 155, 0.12)',
-    textDecoration: 'none',
-    color: '#0f172a',
-    background: '#f9fbff',
-    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-  },
-  icon: {
-    width: '28px',
-    height: '28px',
-    color: '#2563eb',
-    flexShrink: 0,
-    marginTop: '2px',
-  },
-  cardTitle: {
-    margin: '0 0 6px',
-    fontSize: '1.05rem',
-    color: '#0f172a',
-  },
-  footer: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '12px',
-    marginTop: '8px',
-    color: '#64748b',
-    fontSize: '0.95rem',
-  },
-  locationIcon: {
-    width: '18px',
-    height: '18px',
-    color: '#475569',
-  },
-};

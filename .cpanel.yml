@@ -1,0 +1,25 @@
+---
+deployment:
+  tasks:
+    # Your website root is the domain folder itself
+    - export DEPLOYPATH=/home1/smartmav/nelson.smartmavuno.com/
+    
+    # Clean deployment - remove old files
+    - /bin/rm -rf $DEPLOYPATH/*
+    
+    # Copy your built files from 'out' folder to the domain root
+    - /bin/cp -R out/* $DEPLOYPATH
+    
+    # Set correct directory permissions
+    - /bin/find $DEPLOYPATH -type d -exec chmod 755 {} \;
+    
+    # Set correct file permissions
+    - /bin/find $DEPLOYPATH -type f -exec chmod 644 {} \;
+    
+    # Create .htaccess for SPA routing
+    - /bin/echo "RewriteEngine On" > $DEPLOYPATH/.htaccess
+    - /bin/echo "RewriteBase /" >> $DEPLOYPATH/.htaccess
+    - /bin/echo "RewriteRule ^index\.html$ - [L]" >> $DEPLOYPATH/.htaccess
+    - /bin/echo "RewriteCond %{REQUEST_FILENAME} !-f" >> $DEPLOYPATH/.htaccess
+    - /bin/echo "RewriteCond %{REQUEST_FILENAME} !-d" >> $DEPLOYPATH/.htaccess
+    - /bin/echo "RewriteRule . /index.html [L]" >> $DEPLOYPATH/.htaccess

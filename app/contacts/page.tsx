@@ -6,7 +6,10 @@ import {
   FaEnvelope, 
   FaPhoneAlt, 
   FaMapMarkerAlt, 
-  FaPaperPlane 
+  FaPaperPlane, 
+  FaTwitter,
+  FaFacebook,
+  FaInstagram
 } from 'react-icons/fa';
 
 export default function ContactPage() {
@@ -106,6 +109,30 @@ export default function ContactPage() {
                   className="w-12 h-12 rounded-xl bg-[#f1f3f6] hover:bg-blue-100 flex items-center justify-center text-slate-800 hover:text-blue-900 transition-colors"
                 >
                   <FaGithub className="text-xl" />
+                </a>
+                <a
+                  href="https://twitter.com/nelson_tommogo"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-xl bg-[#f1f3f6] hover:bg-blue-100 flex items-center justify-center text-slate-800 hover:text-blue-900 transition-colors"
+                >
+                  <FaTwitter className="text-xl" />
+                </a>
+                <a
+                  href="https://www.facebook.com/nelson.tommogo"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-xl bg-[#f1f3f6] hover:bg-blue-100 flex items-center justify-center text-slate-800 hover:text-blue-900 transition-colors"
+                >
+                  <FaFacebook className="text-xl" />
+                </a>
+                <a
+                href="https://www.instagram.com/nelson_tommogo/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-xl bg-[#f1f3f6] hover:bg-blue-100 flex items-center justify-center text-slate-800 hover:text-blue-900 transition-colors"
+                >
+                  <FaInstagram className="text-xl" />
                 </a>
               </div>
             </div>

@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from "react";
 
-// Projects data - you can fetch this from an API/backend in the future
 const projects = [
   {
     id: 1,

@@ -151,22 +151,22 @@ export default function ServicesCarousel() {
         
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-1.5 md:p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm"
           aria-label="Next service"
         >
-          <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 md:w-6 h-4 md:h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
         {/* Dots Indicator */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        <div className="absolute bottom-3 md:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 md:gap-2 z-10">
           {services.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentIndex ? 'bg-blue-900 w-8' : 'bg-white/60 hover:bg-white/80'
+              className={`rounded-full transition-all ${
+                index === currentIndex ? 'bg-blue-900 w-6 md:w-8 h-2 md:h-3' : 'bg-white/60 hover:bg-white/80 w-2 md:w-3 h-2 md:h-3'
               }`}
               aria-label={`Go to service ${index + 1}`}
             />

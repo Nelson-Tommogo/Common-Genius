@@ -102,24 +102,24 @@ export default function ProjectsSection() {
   const visibleProjects = getVisibleProjects();
 
   return (
-    <div className="w-full max-w-6xl mx-auto mt-16 px-4">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-bold text-gray-800">My Projects</h3>
-        <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+    <div className="w-full max-w-6xl mx-auto mt-12 md:mt-16 px-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 md:mb-8">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">My Projects</h3>
+        <span className="text-xs sm:text-sm text-gray-500 bg-gray-100 px-3 py-1.5 md:py-1 rounded-full">
           {projects.length} Projects
         </span>
       </div>
 
       {/* Projects Carousel */}
       <div className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {visibleProjects.map((project) => (
             <div 
               key={project.id}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
+              className="bg-white rounded-lg md:rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
             >
               {/* Project Image */}
-              <div className="relative w-full h-[220px] bg-gray-200 overflow-hidden flex-shrink-0">
+              <div className="relative w-full h-[180px] sm:h-[200px] md:h-[220px] bg-gray-200 overflow-hidden flex-shrink-0">
                 <img
                   src={project.image}
                   alt={project.name}
@@ -127,26 +127,26 @@ export default function ProjectsSection() {
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-white text-xl font-bold drop-shadow-lg block truncate">
+                <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4">
+                  <span className="text-white text-base md:text-xl font-bold drop-shadow-lg block truncate">
                     {project.name}
                   </span>
                 </div>
               </div>
 
               {/* Project Content */}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-4 md:p-6 flex flex-col flex-grow">
                 {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 flex-grow">
                   {project.description}
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-blue-50 text-blue-900 text-xs font-medium rounded-full border border-blue-100"
+                      className="px-2.5 md:px-3 py-0.5 md:py-1 bg-blue-50 text-blue-900 text-xs font-medium rounded-full border border-blue-100"
                     >
                       {tech}
                     </span>
@@ -158,10 +158,10 @@ export default function ProjectsSection() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-2 md:py-2.5 bg-blue-900 text-white font-semibold text-xs sm:text-sm rounded-lg hover:bg-blue-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95"
                 >
                   Visit Project
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3 md:w-4 h-3 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </a>
@@ -175,20 +175,20 @@ export default function ProjectsSection() {
           <>
             <button
               onClick={goToPrevious}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm border border-gray-200"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 bg-white/90 hover:bg-white rounded-full p-1.5 md:p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm border border-gray-200"
               aria-label="Previous projects"
             >
-              <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 md:w-6 h-4 md:h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             
             <button
               onClick={goToNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm border border-gray-200"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 bg-white/90 hover:bg-white rounded-full p-1.5 md:p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm border border-gray-200"
               aria-label="Next projects"
             >
-              <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 md:w-6 h-4 md:h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -198,13 +198,13 @@ export default function ProjectsSection() {
 
       {/* Dots Indicator */}
       {totalSlides > 1 && (
-        <div className="flex justify-center gap-2 mt-6">
+        <div className="flex justify-center gap-1.5 md:gap-2 mt-4 md:mt-6">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentIndex ? 'bg-blue-900 w-8' : 'bg-gray-300 hover:bg-gray-400'
+              className={`rounded-full transition-all ${
+                index === currentIndex ? 'bg-blue-900 w-6 md:w-8 h-2 md:h-3' : 'bg-gray-300 hover:bg-gray-400 w-2 md:w-3 h-2 md:h-3'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

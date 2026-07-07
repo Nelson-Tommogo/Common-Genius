@@ -42,28 +42,28 @@ export default function StackPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-50 py-16 px-4 md:px-8">
+    <main className="min-h-screen bg-slate-50 py-8 md:py-16 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="h-[2px] w-8 bg-blue-900"></span>
+        <div className="text-center mb-8 md:mb-12">
+          <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
+            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
             <span className="text-blue-900 font-semibold tracking-widest text-xs uppercase">Our Capabilities</span>
-            <span className="h-[2px] w-8 bg-blue-900"></span>
+            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-4">
             Technology Stack
           </h1>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             Delivering modern digital solutions with a strong foundation in frontend, backend, security, blockchain, and data.
           </p>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-10 overflow-x-auto pb-2">
           <button 
             onClick={() => setActiveTab('All')}
-            className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+            className={`px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
               activeTab === 'All' 
                 ? 'bg-blue-900 text-white shadow-md' 
                 : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
@@ -75,7 +75,7 @@ export default function StackPage() {
             <button 
               key={stack.category}
               onClick={() => setActiveTab(stack.category)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+              className={`px-4 md:px-5 py-2 md:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                 activeTab === stack.category 
                   ? 'bg-blue-900 text-white shadow-md' 
                   : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
@@ -87,41 +87,41 @@ export default function StackPage() {
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {stacks
             .filter((stack) => activeTab === 'All' || activeTab === stack.category)
             .map((stack, index) => (
             <div 
               key={index}
-              className="group relative bg-white rounded-2xl p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-slate-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              className="group relative bg-white rounded-xl md:rounded-2xl p-4 md:p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] border border-slate-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
             >
               {/* Blue Gradient Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-600 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-600 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl md:rounded-2xl"></div>
 
               {/* Icon Circle - Blue Themed */}
-              <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-900 group-hover:bg-blue-900 group-hover:text-white group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 mb-4">
-                {stack.icon}
+              <div className="w-12 md:w-14 h-12 md:h-14 rounded-lg md:rounded-xl bg-blue-50 flex items-center justify-center text-blue-900 group-hover:bg-blue-900 group-hover:text-white group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 mb-4">
+                <span className="text-xl md:text-2xl">{stack.icon}</span>
               </div>
 
-              <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-900 transition-colors">
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-900 transition-colors">
                 {stack.category}
               </h3>
               
-              <p className="text-slate-600 text-sm leading-relaxed mb-4">
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
                 {stack.description}
               </p>
 
               {/* Tech Tags */}
-              <div className="flex flex-wrap gap-2 mb-5">
+              <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-5">
                 {stack.tech.map((tech, i) => (
-                  <span key={i} className="px-3 py-1 bg-blue-50 text-blue-800 text-xs font-medium rounded-full group-hover:bg-blue-100 transition-colors">
+                  <span key={i} className="px-2.5 md:px-3 py-0.5 md:py-1 bg-blue-50 text-blue-800 text-xs font-medium rounded-full group-hover:bg-blue-100 transition-colors">
                     {tech}
                   </span>
                 ))}
               </div>
 
               {/* CTA Button */}
-              <button className="flex items-center gap-2 text-sm font-semibold text-slate-700 group-hover:text-blue-900 transition-colors">
+              <button className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 group-hover:text-blue-900 transition-colors">
                 Learn More
                 <FaArrowRight className="text-xs transform group-hover:translate-x-1 transition-transform" />
               </button>

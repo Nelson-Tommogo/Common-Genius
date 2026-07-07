@@ -78,56 +78,56 @@ export default function ProjectsPage() {
   const visibleProjects = getVisibleProjects();
 
   return (
-    <main className="min-h-screen bg-slate-50 py-16 px-4 md:px-8">
+    <main className="min-h-screen bg-slate-50 py-8 md:py-16 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="h-[2px] w-8 bg-blue-900"></span>
+        <div className="text-center mb-8 md:mb-12">
+          <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
+            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
             <span className="text-blue-900 font-semibold tracking-widest text-xs uppercase">Our Work</span>
-            <span className="h-[2px] w-8 bg-blue-900"></span>
+            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-4">
             Projects
           </h1>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             Explore active and upcoming projects built with modern technologies.
           </p>
         </div>
 
         {/* Projects Carousel */}
         <div className="relative mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {visibleProjects.map((project) => (
               <div 
                 key={project.id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
+                className="bg-white rounded-lg md:rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
               >
                 {/* Project Image */}
-                <div className="relative w-full h-[220px] bg-slate-200 overflow-hidden flex-shrink-0">
+                <div className="relative w-full h-[180px] sm:h-[200px] md:h-[220px] bg-slate-200 overflow-hidden flex-shrink-0">
                   <img
                     src={project.image}
                     alt={project.name}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <span className="text-white text-xl font-bold drop-shadow-lg block truncate">
+                  <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4">
+                    <span className="text-white text-lg md:text-xl font-bold drop-shadow-lg block truncate">
                       {project.name}
                     </span>
                   </div>
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                <div className="p-4 md:p-6 flex flex-col flex-grow">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4 flex-grow">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4">
                     {project.technologies.map((tech, index) => (
-                      <span key={index} className="px-3 py-1 bg-blue-50 text-blue-900 text-xs font-medium rounded-full border border-blue-100">
+                      <span key={index} className="px-2.5 md:px-3 py-0.5 md:py-1 bg-blue-50 text-blue-900 text-xs font-medium rounded-full border border-blue-100">
                         {tech}
                       </span>
                     ))}
@@ -137,10 +137,10 @@ export default function ProjectsPage() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95"
+                    className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-2 md:py-2.5 bg-blue-900 text-white text-xs sm:text-sm font-semibold rounded-lg hover:bg-blue-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95"
                   >
                     Visit Project
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 md:w-4 h-3 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </a>
@@ -154,18 +154,18 @@ export default function ProjectsPage() {
             <>
               <button
                 onClick={goToPrevious}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm border border-slate-200"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 bg-white/90 hover:bg-white rounded-full p-1.5 md:p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm border border-slate-200"
               >
-                <svg className="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 md:w-6 h-4 md:h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
               
               <button
                 onClick={goToNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm border border-slate-200"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 bg-white/90 hover:bg-white rounded-full p-1.5 md:p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm border border-slate-200"
               >
-                <svg className="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 md:w-6 h-4 md:h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
@@ -175,13 +175,13 @@ export default function ProjectsPage() {
 
         {/* Dots Indicator */}
         {totalSlides > 1 && (
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-1.5 md:gap-2 mt-4 md:mt-6">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-blue-900 w-8' : 'bg-slate-300 hover:bg-slate-400'
+                className={`rounded-full transition-all ${
+                  index === currentIndex ? 'bg-blue-900 w-6 md:w-8 h-2 md:h-3' : 'bg-slate-300 hover:bg-slate-400 w-2 md:w-3 h-2 md:h-3'
                 }`}
               />
             ))}

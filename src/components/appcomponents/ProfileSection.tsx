@@ -19,7 +19,7 @@ export default function ProfileSection() {
       <div className="w-full md:w-1/2 space-y-4">
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">Hello I'm Nelson Tommogo</h2>
         <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg">
-          Senior Software Engineer with a passion for building scalable and efficient web applications in React, Next.js and Laravel. My Goal to Continue contributing to projects and solutions that shape Kenyas and Africa Ecosystem.
+          Senior Software Engineer with a passion for building scalable and efficient Mobile web applications in React, Next.js, kotlin - KMP and Laravel. My Goal to Continue contributing to projects and solutions that shape Kenyas and Africa Ecosystem.
         </p>
         <div className="flex gap-2 pt-2 flex-wrap">
           <a 

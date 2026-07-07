@@ -8,6 +8,7 @@ const navItems = [
   { href: '/stack', label: 'Stack'},
   { href: '/projects', label: 'Projects'},
   { href: '/contacts', label: 'Contact'},
+  {href: '/development', label: 'Pricing'},
 ];
 
 export default function TopBar() {

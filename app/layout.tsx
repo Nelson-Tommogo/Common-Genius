@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Nelson Ochieng Tommogo",
-  description: "Software Engineer",
+  description: "Senior Software Engineer",
   icons: {
     icon: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782755698/profile_kpktwb.jpg",
   },

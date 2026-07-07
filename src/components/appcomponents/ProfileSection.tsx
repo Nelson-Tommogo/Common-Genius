@@ -34,7 +34,7 @@ export default function ProfileSection() {
             GitHub
           </a>
           <a 
-            href="https://drive.google.com/file/d/1J0k5g6Z8F9G7H2K3L4M5N6O7P8Q9R0S/view?usp=sharing"
+            href="https://docs.google.com/document/d/1zsdXTa0WTB6ypN5Jk9tqEh4C4NK_t56yty4eK0XNa6s/edit?usp=sharing"
             target="_blank" 
             rel="noopener noreferrer"
             className="px-4 md:px-6 py-2 md:py-2.5 bg-blue-900 text-white rounded-lg hover:bg-blue-500 transition-colors flex items-center gap-2 text-sm md:text-base"

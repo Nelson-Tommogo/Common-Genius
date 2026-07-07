@@ -74,15 +74,15 @@ export default function ServicesCarousel() {
   const currentService = services[currentIndex];
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">My Services</h3>
+    <div className="w-full max-w-6xl mx-auto px-4 mb-12 md:mb-16">
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">My Services</h3>
       
-      <div className="relative bg-white rounded-xl shadow-lg overflow-hidden">
+      <div className="relative bg-white rounded-lg md:rounded-xl shadow-lg overflow-hidden">
         {/* Service Card with Image */}
         <div className="grid grid-cols-1 md:grid-cols-2">
           
           {/* Image Section - Fixed size */}
-          <div className="relative w-full h-[300px] md:h-[350px] bg-gray-200 overflow-hidden flex-shrink-0">
+          <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] bg-gray-200 overflow-hidden flex-shrink-0">
             <img
               src={currentService.image}
               alt={currentService.name}
@@ -92,46 +92,46 @@ export default function ServicesCarousel() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent md:bg-gradient-to-r md:from-black/50 md:via-transparent md:to-transparent"></div>
             
             {/* Years of Experience Flag */}
-            <div className="absolute top-4 left-4 bg-blue-900/90 text-white px-4 py-2 rounded-lg backdrop-blur-sm flex items-center gap-2 shadow-lg border border-blue-400/20">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="absolute top-3 md:top-4 left-3 md:left-4 bg-blue-900/90 text-white px-3 md:px-4 py-1.5 md:py-2 rounded-lg backdrop-blur-sm flex items-center gap-2 shadow-lg border border-blue-400/20 text-xs md:text-sm">
+              <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span className="font-bold">{yearsOfExperience}+</span>
-              <span className="text-sm font-normal">Years Experience</span>
+              <span className="hidden sm:inline text-xs md:text-sm font-normal">Years Experience</span>
             </div>
           </div>
 
           {/* Content Section */}
-          <div className="p-8 flex flex-col justify-center">
+          <div className="p-4 sm:p-6 md:p-8 flex flex-col justify-center">
             {/* Service Name with Icon */}
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-1 h-8 bg-blue-900 rounded-full"></span>
-              <h4 className="text-2xl font-bold text-gray-800">
+            <div className="flex items-center gap-2 mb-3 md:mb-4">
+              <span className="w-1 h-6 md:h-8 bg-blue-900 rounded-full"></span>
+              <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">
                 {currentService.name}
               </h4>
             </div>
 
             {/* Service Description */}
-            <p className="text-gray-600 leading-relaxed text-lg mb-6">
+            <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-lg mb-4 md:mb-6">
               {currentService.description}
             </p>
 
             {/* Experience Badge - Mobile Only */}
-            <div className="md:hidden bg-blue-50 text-blue-900 px-4 py-2 rounded-lg mb-4 flex items-center gap-2 self-start border border-blue-100">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="md:hidden bg-blue-50 text-blue-900 px-3 py-2 rounded-lg mb-4 flex items-center gap-2 self-start border border-blue-100 text-xs sm:text-sm">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span className="font-bold">{yearsOfExperience}+</span>
-              <span className="text-sm">Years Experience</span>
+              <span className="text-xs sm:text-sm">Years Experience</span>
             </div>
 
             {/* Get It Button */}
             <button
               onClick={scrollToContact}
-              className="self-start px-8 py-3 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2"
+              className="self-start px-4 md:px-8 py-2 md:py-3 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-800 transition-all hover:shadow-lg hover:scale-105 active:scale-95 flex items-center gap-2 text-sm md:text-base"
             >
               Get It
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
@@ -141,10 +141,10 @@ export default function ServicesCarousel() {
         {/* Navigation Arrows */}
         <button
           onClick={goToPrevious}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-1.5 md:p-2 shadow-lg transition-all hover:scale-110 z-10 backdrop-blur-sm"
           aria-label="Previous service"
         >
-          <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 md:w-6 h-4 md:h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>

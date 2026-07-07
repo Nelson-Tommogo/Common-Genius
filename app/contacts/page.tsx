@@ -37,19 +37,21 @@ export default function ContactPage() {
       <div className="w-full max-w-6xl">
         
         {/* Header Section */}
-        <div className="text-center mb-8 md:mb-12">
-          <div className="flex items-center justify-center gap-3 mb-3 md:mb-4">
-            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
-            <span className="text-blue-900 font-semibold tracking-widest text-xs uppercase">Get in touch</span>
-            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-4">
-            Let's Work Together
-          </h1>
-          <p className="text-slate-500 text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-            Open to new opportunities and collaborations. Whether you have a project in mind or just want to connect, feel free to reach out.
-          </p>
-        </div>
+       <div className="pt-20 md:pt-24 lg:pt-28 pb-6 md:pb-10">
+  <div className="text-center max-w-4xl mx-auto px-4">
+    <div className="flex items-center justify-center gap-3 mb-4 md:mb-5">
+      <span className="h-[2px] w-6 md:w-10 bg-gradient-to-r from-blue-900 to-blue-600"></span>
+      <span className="text-blue-900 font-semibold tracking-[0.15em] text-xs md:text-sm uppercase">
+        Get in touch
+      </span>
+      <span className="h-[2px] w-6 md:w-10 bg-gradient-to-l from-blue-900 to-blue-600"></span>
+    </div>
+    
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-3 md:mb-4 leading-tight">
+      Let's Work Together
+    </h1>
+  </div>
+</div>
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">

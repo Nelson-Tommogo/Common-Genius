@@ -82,19 +82,25 @@ export default function ProjectsPage() {
       <div className="max-w-6xl mx-auto">
         
         {/* Header Section */}
-        <div className="text-center mb-8 md:mb-12">
-          <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
-            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
-            <span className="text-blue-900 font-semibold tracking-widest text-xs uppercase">Our Work</span>
-            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-4">
-            Projects
-          </h1>
-          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Explore active and upcoming projects built with modern technologies.
-          </p>
-        </div>
+<div className="pt-20 md:pt-24 lg:pt-28 pb-6 md:pb-10">
+  <div className="text-center max-w-4xl mx-auto px-4">
+    <div className="flex items-center justify-center gap-2 mb-4 md:mb-5">
+      <span className="h-[2px] w-6 md:w-10 bg-gradient-to-r from-blue-900 to-blue-600"></span>
+      <span className="text-blue-900 font-semibold tracking-[0.15em] text-xs md:text-sm uppercase">
+        My Work
+      </span>
+      <span className="h-[2px] w-6 md:w-10 bg-gradient-to-l from-blue-900 to-blue-600"></span>
+    </div>
+    
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-3 md:mb-4 leading-tight">
+      Projects
+    </h1>
+    
+    <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2">
+      Explore active and upcoming projects built with modern technologies.
+    </p>
+  </div>
+</div>
 
         {/* Projects Carousel */}
         <div className="relative mt-8">

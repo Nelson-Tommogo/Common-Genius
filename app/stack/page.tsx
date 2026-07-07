@@ -45,19 +45,26 @@ export default function StackPage() {
     <main className="min-h-screen bg-slate-50 py-8 md:py-16 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-8 md:mb-12">
-          <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
-            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
-            <span className="text-blue-900 font-semibold tracking-widest text-xs uppercase">Our Capabilities</span>
-            <span className="h-[2px] w-6 md:w-8 bg-blue-900"></span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 md:mb-4">
-            Technology Stack
-          </h1>
-          <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            Delivering modern digital solutions with a strong foundation in frontend, backend, security, blockchain, and data.
-          </p>
-        </div>
+        <div className="pt-20 md:pt-28 lg:pt-32 pb-8 md:pb-12">
+  <div className="text-center max-w-4xl mx-auto px-4">
+    <div className="flex items-center justify-center gap-2 mb-4 md:mb-5">
+      <span className="h-[2px] w-6 md:w-10 bg-blue-900"></span>
+      <span className="text-blue-900 font-semibold tracking-[0.15em] text-xs md:text-sm uppercase">
+        My Capabilities
+      </span>
+      <span className="h-[2px] w-6 md:w-10 bg-blue-900"></span>
+    </div>
+    
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-3 md:mb-4 leading-tight">
+      Technology Stack
+    </h1>
+    
+    <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2">
+      Delivering modern digital solutions with a strong foundation in frontend, backend, 
+      security, blockchain, and data.
+    </p>
+  </div>
+</div>
 
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-10 overflow-x-auto pb-2">

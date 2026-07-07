@@ -17,7 +17,24 @@ const projects = [
     image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782758721/mebiut_vyejxj.png",
     link: "https://mebiut.vercel.app",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"]
+  },
+  {
+    id: 3,
+    name: "Omnipower Solutions",
+    description: "Web Based platform for Omnipower Solutions, a leading provider of energy solutions, showcasing their products and services with an intuitive user interface, with payment integration for seamless transactions.",
+    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1783442085/omnipowersolutions_wicka3.png",
+    link: "https://omnipowersolutions.co.ke/",
+    technologies: ["Next.js", "Node.js", "PostgreSQL", "Docker"]
+  },
+  {
+    id: 4,
+    name: "Ushahidi Evidence Platform",
+    description: "AI powered web based platform for uploading evidences, certificates, OB Exerpts, CCTV Footages and other documents for later retrieval and use in court, Schools or personal use.",
+    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1783442501/ushahidi_iw29ml.png",
+    link: "https://ushahidi-beta.vercel.app/",
+    technologies: ["Next.js", "Node.js", "PostgreSQL", "AI/ML"]
   }
+  
 ];
 
 export default function ProjectsPage() {

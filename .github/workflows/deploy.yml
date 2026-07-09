@@ -40,18 +40,17 @@ jobs:
         host: ${{ secrets.CPANEL_HOST }}
         username: ${{ secrets.CPANEL_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.SSH_PORT || 22 }}
+        port: 22
         script: |
           cd ~/public_html/nelsontommogo || exit 1
           git fetch origin main
           git reset --hard origin/main
           pnpm install --frozen-lockfile
           pnpm run build
-          # For static export (if using build:export)
           if [ -d "out" ]; then
             cp -r out/* . --force
           fi
-          echo "✅ Deployment completed at $(date)"
+          echo "Deployment completed at $(date)"
     
     - name: Deployment Status
       if: always()

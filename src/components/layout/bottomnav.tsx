@@ -12,7 +12,7 @@ const navItems = [
   { href: '/', label: 'Home', icon: <Home />, activeIcon: <Home /> },
   { href: '/stack', label: 'Stack', icon: <Layers3 />, activeIcon: <Layers3 /> },
   { href: '/projects', label: 'Projects', icon: <FolderKanban />, activeIcon: <FolderKanban /> },
-  { href: '/development', label: 'Pricing', icon: <Layers3 />, activeIcon: <Layers3 /> },
+  { href: '/pricing', label: 'Pricing', icon: <Layers3 />, activeIcon: <Layers3 /> },
 ];
 
 export default function BottomNav() {

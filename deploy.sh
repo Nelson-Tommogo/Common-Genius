@@ -11,9 +11,9 @@ DOMAIN="nelson.smartmavuno.com"
 
 echo -e "${GREEN}🚀 Starting deployment to ${DOMAIN}...${NC}"
 
-# Build and export in one command
-echo -e "${YELLOW}📦 Building and exporting project...${NC}"
-npm run build:export
+# Build project
+echo -e "${YELLOW}📦 Building project...${NC}"
+npm run build
 
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}✅ Build successful!${NC}"

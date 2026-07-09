@@ -1,0 +1,58 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deployment
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 9
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'pnpm'
+    
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+    
+    - name: Build project
+      run: pnpm run build
+    
+    - name: Deploy to cPanel
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.CPANEL_HOST }}
+        username: ${{ secrets.CPANEL_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SSH_PORT || 22 }}
+        script: |
+          cd ~/public_html/nelsontommogo || exit 1
+          git fetch origin main
+          git reset --hard origin/main
+          pnpm install --frozen-lockfile
+          pnpm run build
+          # For static export (if using build:export)
+          if [ -d "out" ]; then
+            cp -r out/* . --force
+          fi
+          echo "✅ Deployment completed at $(date)"
+    
+    - name: Deployment Status
+      if: always()
+      run: echo "Deployment job completed with status: ${{ job.status }}"

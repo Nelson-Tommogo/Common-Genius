@@ -164,7 +164,7 @@ export default function PricingPage() {
         {/* Service Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
           {currentServices.services.map((service) => (
-            <Link href="/contact" key={service.id}>
+            <Link href="/contacts" key={service.id}>
               <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full">
                 <div className="p-4 md:p-5">
                   <div className="flex justify-between items-start gap-2 mb-1.5">

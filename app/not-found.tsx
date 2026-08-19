@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="flex min-h-[70vh] items-center justify-center px-4 py-12">
       <div className="mx-auto max-w-xl text-center">
-        <div className="mb-6 text-7xl font-black tracking-tight text-blue-600 sm:text-8xl">
+        <div className="mb-6 text-7xl font-black tracking-tight text-blue-900 sm:text-8xl">
           404
         </div>
 
@@ -24,7 +24,7 @@ export default function NotFound() {
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/"
-            className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-base font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="inline-flex items-center justify-center rounded-lg bg-blue-900 px-6 py-3 text-base font-semibold text-white transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Return home
           </Link>

@@ -1,4 +1,3 @@
-//import our Applayout component here so we use it vereywhere in our app
 import Applayout from "@/src/components/layout/AppLayout";
 import "./globals.css";
 import { Inter } from "next/font/google";

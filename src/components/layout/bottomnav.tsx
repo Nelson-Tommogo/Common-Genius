@@ -1,119 +1,94 @@
-'use client';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import {
-  Home,
-  Layers3,
-  FolderKanban,
-} from 'lucide-react';
+"use client";
+
+import Link from "next/link";
+import { 
+  MdHome, 
+  MdEgg, 
+  MdAgriculture, 
+  MdPeople, 
+  MdStorefront,
+  MdContactSupport 
+} from "react-icons/md";
+import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: '/', label: 'Home', icon: <Home />, activeIcon: <Home /> },
-  { href: '/stack', label: 'Stack', icon: <Layers3 />, activeIcon: <Layers3 /> },
-  { href: '/projects', label: 'Projects', icon: <FolderKanban />, activeIcon: <FolderKanban /> },
-  { href: '/pricing', label: 'Pricing', icon: <Layers3 />, activeIcon: <Layers3 /> },
+  {
+    name: "Home",
+    href: "/",
+    icon: MdHome,
+  },
+  {
+    name: "Stack",
+    href: "/stack",
+    icon: MdEgg,
+  },
+  {
+    name: "Projects",
+    href: "/projects",
+    icon: MdAgriculture,
+  },
+  {
+    name: "Pricing",
+    href: "/pricing",
+    icon: MdStorefront,
+  },
 ];
 
-export default function BottomNav() {
+export default function MobileHomeBottomNav() {
   const pathname = usePathname();
-  const [isMobile, setIsMobile] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
-
-  if (!isMobile) {
-    return null;
-  }
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   return (
-    <>
-      <div className="h-[calc(72px+env(safe-area-inset-bottom))] md:hidden" />
-      
-      <nav 
-        className={`
-          md:hidden fixed bottom-0 left-0 right-0 z-50
-          bg-white/95 backdrop-blur-xl 
-          border-t border-gray-200/50
-          shadow-[0_-4px_20px_rgba(0,0,0,0.08)]
-          transition-transform duration-300 ease-in-out
-          ${isVisible ? 'translate-y-0' : 'translate-y-full'}
-        `}
-        style={{
-          paddingBottom: 'env(safe-area-inset-bottom)',
-        }}
-      >
-        <ul className="flex items-center justify-around max-w-lg mx-auto px-2">
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center px-4 pb-6 md:hidden">
+      <nav className="relative w-full max-w-sm rounded-2xl border border-white/20 bg-white/90 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.15)] backdrop-blur-xl">
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/40 to-transparent opacity-50 pointer-events-none" />
+        
+        <div className="relative grid h-[72px] grid-cols-4">
           {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            
+            const active = isActive(item.href);
+            const Icon = item.icon;
+
             return (
-              <li key={item.href} className="flex-1 relative">
-                <Link
-                  href={item.href}
+              <Link
+                key={item.name}
+                href={item.href}
+                className="group relative flex flex-col items-center justify-center gap-0.5"
+              >
+                {active && (
+                  <div className="absolute inset-x-3 inset-y-1.5 rounded-xl bg-emerald-50/80 shadow-[0_2px_8px_-4px_rgba(16,185,129,0.2)]" />
+                )}
+
+                <Icon
                   className={`
-                    relative flex flex-col items-center justify-center
-                    py-2.5 px-2 transition-all duration-300
-                    group
+                    h-[22px] w-[22px] relative z-10 transition-all duration-200
+                    ${active
+                      ? "text-emerald-600"
+                      : "text-gray-400 group-hover:text-gray-600"
+                    }
+                  `}
+                />
+
+                <span 
+                  className={`
+                    relative z-10 text-[11px] font-medium tracking-wide
+                    transition-colors duration-200
+                    ${active 
+                      ? "text-emerald-700" 
+                      : "text-gray-400 group-hover:text-gray-500"
+                    }
                   `}
                 >
-                  {/* Active indicator bar */}
-                  {isActive && (
-                    <span className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-10 h-1 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full" />
-                  )}
-                  
-                  {/* Icon */}
-                  <span className={`
-                    text-2xl transition-all duration-300
-                    ${isActive 
-                      ? 'scale-110 drop-shadow-[0_2px_12px_rgba(59,130,246,0.4)]' 
-                      : 'scale-100 group-hover:scale-105'
-                    }
-                  `}>
-                    {isActive ? item.activeIcon : item.icon}
-                  </span>
-                  
-                  {/* Label */}
-                  <span className={`
-                    text-[10px] font-medium mt-0.5 transition-all duration-300
-                    ${isActive 
-                      ? 'text-blue-600 font-semibold' 
-                      : 'text-gray-500 group-hover:text-gray-700'
-                    }
-                  `}>
-                    {item.label}
-                  </span>
-                </Link>
-              </li>
+                  {item.name}
+                </span>
+              </Link>
             );
           })}
-        </ul>
+        </div>
       </nav>
-    </>
+    </div>
   );
 }

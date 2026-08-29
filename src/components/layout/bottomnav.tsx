@@ -3,11 +3,9 @@
 import Link from "next/link";
 import { 
   MdHome, 
-  MdEgg, 
-  MdAgriculture, 
-  MdPeople, 
-  MdStorefront,
-  MdContactSupport 
+  MdCode, 
+  MdPriceCheck,
+  MdFolderOpen
 } from "react-icons/md";
 import { usePathname } from "next/navigation";
 
@@ -20,17 +18,17 @@ const navItems = [
   {
     name: "Stack",
     href: "/stack",
-    icon: MdEgg,
-  },
+    icon: MdCode, 
+    },
   {
     name: "Projects",
     href: "/projects",
-    icon: MdAgriculture,
+    icon: MdFolderOpen,
   },
   {
     name: "Pricing",
     href: "/pricing",
-    icon: MdStorefront,
+    icon: MdPriceCheck, 
   },
 ];
 
@@ -59,15 +57,15 @@ export default function MobileHomeBottomNav() {
                 className="group relative flex flex-col items-center justify-center gap-0.5"
               >
                 {active && (
-                  <div className="absolute inset-x-3 inset-y-1.5 rounded-xl bg-emerald-50/80 shadow-[0_2px_8px_-4px_rgba(16,185,129,0.2)]" />
+                  <div className="absolute inset-x-3 inset-y-1.5 rounded-xl bg-blue-50/80 shadow-[0_2px_8px_-4px_rgba(59,130,246,0.2)]" />
                 )}
 
                 <Icon
                   className={`
                     h-[22px] w-[22px] relative z-10 transition-all duration-200
                     ${active
-                      ? "text-emerald-600"
-                      : "text-gray-400 group-hover:text-gray-600"
+                      ? "text-blue-600"
+                      : "text-gray-400 group-hover:text-blue-600"
                     }
                   `}
                 />
@@ -77,8 +75,8 @@ export default function MobileHomeBottomNav() {
                     relative z-10 text-[11px] font-medium tracking-wide
                     transition-colors duration-200
                     ${active 
-                      ? "text-emerald-700" 
-                      : "text-gray-400 group-hover:text-gray-500"
+                      ? "text-blue-600" 
+                      : "text-gray-400 group-hover:text-blue-600"
                     }
                   `}
                 >

@@ -53,13 +53,10 @@ export default function ContactPage() {
   </div>
 </div>
 
-        {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           
-          {/* Left Column - Contact Info */}
           <div className="flex flex-col gap-4 md:gap-6">
             
-            {/* Email Card */}
             <div className="bg-white rounded-lg md:rounded-2xl p-4 md:p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] flex items-center gap-4 md:gap-5">
               <div className="w-12 md:w-14 h-12 md:h-14 rounded-lg md:rounded-xl bg-blue-50 flex items-center justify-center text-blue-900 text-lg md:text-xl shrink-0">
                 <FaEnvelope />

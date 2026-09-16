@@ -1,28 +1,26 @@
-// app/components/ServicesCarousel.tsx
 "use client";
 
-import router from "next/router";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
-// Services data with Cloudinary images
 const services = [
   { 
     id: 1, 
-    name: "Mobile Development", 
-    description: "Building responsive and high-performance mobile applications for iOS and Android platforms.",
+    name: "Mobile & Web Solutions", 
+    description: "Building responsive, high-performance mobile and web applications for iOS, Android, and the modern web.",
     image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757871/web_yroiac.jpg"
   },
   { 
     id: 2, 
-    name: "Web Development", 
-    description: "Creating dynamic and interactive web applications using modern frameworks and technologies.",
-    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757870/web1_xhqeki.jpg"
+    name: "Blockchain Development", 
+    description: "Designing and deploying secure smart contracts, dApps, and decentralized solutions on modern blockchain networks.",
+    image: "https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   { 
     id: 3, 
-    name: "UI/UX Design", 
-    description: "Designing user-friendly interfaces and experiences that enhance usability and engagement.",
-    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757869/web2_rmbj5h.jpg"
+    name: "Cyber Security & Forensics", 
+    description: "Protecting systems and data through security audits, threat analysis, and digital forensic investigations.",
+    image: "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   { 
     id: 4, 
@@ -30,9 +28,16 @@ const services = [
     description: "Developing robust server-side logic, APIs, and database management for seamless application functionality.",
     image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757869/web3_a1hqvb.jpg"
   },
+  { 
+    id: 5, 
+    name: "UI/UX Design", 
+    description: "Designing user-friendly interfaces and experiences that enhance usability and engagement.",
+    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
 ];
 
 export default function ServicesCarousel() {
+  const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [yearsOfExperience, setYearsOfExperience] = useState(5);
 

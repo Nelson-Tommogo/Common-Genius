@@ -1,3 +1,4 @@
+// app/components/ProfileSection.tsx
 "use client";
 
 export default function ProfileSection() {
@@ -7,7 +8,7 @@ export default function ProfileSection() {
         <div className="relative w-48 sm:w-56 md:w-80 lg:w-96 h-48 sm:h-56 md:h-80 lg:h-96">
           <img 
             src="https://res.cloudinary.com/df64ucx5w/image/upload/v1782755698/profile_kpktwb.jpg" 
-            alt="Nelson (CommonGenius) Tommogo - Profile" 
+            alt="Nelson Tommogo - Profile" 
             className="w-full h-full object-cover rounded-full shadow-xl border-4 border-white"
             style={{ objectPosition: 'top center' }}
           />
@@ -16,20 +17,14 @@ export default function ProfileSection() {
       </div>
 
       <div className="w-full md:w-1/2 space-y-4">
-        <div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">
-            Hello I'm Nelson (CommonGenius) Tommogo
-          </h2>
-          <p className="text-blue-900 font-semibold text-sm sm:text-base md:text-lg mt-2">
-            Founder &amp; CEO | Senior Software Blockchain Engineer | MSc Cyber Security &amp; Digital Forensics
-          </p>
-        </div>
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">
+          Hello, My name is Nelson Tommogo
+        </h2>
+        <p className="text-blue-900 font-semibold text-sm sm:text-base md:text-lg">
+          Founder &amp; CEO | Senior Software Engineer | MSc Cyber Security &amp; Digital Forensics
+        </p>
         <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg">
-          Senior Software &amp; Blockchain Engineer with a passion for building scalable, secure, and efficient 
-          mobile and web applications using React, Next.js, Kotlin (KMP), Flutter, and Laravel. As Founder &amp; CEO, 
-          I lead teams in delivering innovative solutions while leveraging my expertise in Cyber Security &amp; 
-          Digital Forensics. My goal is to continue contributing to projects and solutions that shape Kenya's 
-          and Africa's tech ecosystem.
+          Passionate about building scalable, secure mobile and web applications that shape Africa's tech ecosystem.
         </p>
         <div className="flex gap-2 pt-2 flex-wrap">
           <a 

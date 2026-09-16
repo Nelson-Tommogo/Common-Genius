@@ -29,7 +29,7 @@ export default function ProfileSection() {
             </span>
           </p>
           <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg mt-1">
-            Passionate about building scalable, secure mobile and web applications that shape Africa's tech ecosystem.
+            Passionate about building scalable, secure tech solutions that shape Kenya's tech ecosystem.
           </p>
         </div>
 

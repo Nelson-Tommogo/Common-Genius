@@ -1,11 +1,13 @@
 "use client";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { 
   FaCode, FaServer, FaLink, FaShieldAlt, FaChartBar, 
   FaMobileAlt, FaArrowRight 
 } from 'react-icons/fa';
 
 export default function StackPage() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState('All');
 
   const stacks = [
@@ -134,7 +136,10 @@ export default function StackPage() {
               </div>
 
               {/* CTA Button */}
-              <button className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 group-hover:text-blue-900 transition-colors">
+              <button 
+                onClick={() => router.push('/contacts')}
+                className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 group-hover:text-blue-900 transition-colors"
+              >
                 Learn More
                 <FaArrowRight className="text-xs transform group-hover:translate-x-1 transition-transform" />
               </button>

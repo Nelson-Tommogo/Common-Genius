@@ -1,17 +1,16 @@
-// app/components/ProjectsSection.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 
 const projects = [
   {
-    id: 1,
-    name: "SmartMavuno",
-    description: "A smart agricultural platform that helps farmers optimize crop yields through data-driven insights and real-time monitoring.",
-    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782758720/smartmavuno_phlmfo.png",
-    link: "https://smartmavuno.com",
-    technologies: ["React", "Node.js", "MongoDB", "AI/ML"]
-  },
+  id: 1,
+  name: "SmartMavuno",
+  description: "A B2B2C agri-marketplace connecting farmers to vendors and end consumers at farm-gate prices, eliminating middlemen. Features 24-hour delivery, premium farm-fresh produce, and on-call professional agronomic support for farmers.",
+  image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782758720/smartmavuno_phlmfo.png",
+  link: "https://smartmavuno.com",
+  technologies: ["Next.js", "PostgreSQL", "Laravel", "AI/ML"]
+},
   {
     id: 2,
     name: "Mebiut",
@@ -21,22 +20,21 @@ const projects = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"]
   },
   {
-    id: 3,
-    name: "Omnipower Solutions",
-    description: "Web Based platform for Omnipower Solutions, a leading provider of energy solutions, showcasing their products and services with an intuitive user interface, with payment integration for seamless transactions.",
-    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1783442085/omnipowersolutions_wicka3.png",
-    link: "https://omnipowersolutions.co.ke/",
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "Docker"]
-  },
-  {
-    id: 4,
-    name: "Ushahidi Evidence Platform",
-    description: "AI powered web based platform for uploading evidences, certificates, OB Exerpts, CCTV Footages and other documents for later retrieval and use in court, Schools or personal use.",
-    image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1783442501/ushahidi_iw29ml.png",
-    link: "https://ushahidi-beta.vercel.app/",
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "AI/ML"]
-  }
-  
+  id: 3,
+  name: "Omnipower Solutions",
+  description: "A web platform for a leading electrical and security solutions provider, showcasing services like electrical wiring, solar installation, CCTV, electric fences, and automated gates — with a product catalog and integrated payments for seamless transactions.",
+  image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1783442085/omnipowersolutions_wicka3.png",
+  link: "https://omnipowersolutions.co.ke/",
+  technologies: ["Next.js", "Node.js", "PostgreSQL", "Docker"]
+},
+ {
+  id: 4,
+  name: "Ushahidi Evidence Platform",
+  description: "An AI-powered web platform for securely uploading, organizing, and retrieving legal and personal evidence — including certificates, OB excerpts, CCTV footage, and other documents — for use in courts, schools, or personal record-keeping.",
+  image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1783442501/ushahidi_iw29ml.png",
+  link: "https://ushahidi-beta.vercel.app/",
+  technologies: ["Next.js", "Node.js", "PostgreSQL", "AI/ML"]
+},  
 ];
 
 export default function ProjectsSection() {

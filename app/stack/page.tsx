@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { 
   FaCode, FaServer, FaLink, FaShieldAlt, FaChartBar, 
-  FaArrowRight 
+  FaMobileAlt, FaArrowRight 
 } from 'react-icons/fa';
 
 export default function StackPage() {
@@ -12,14 +12,20 @@ export default function StackPage() {
     {
       category: 'Frontend',
       icon: <FaCode className="text-2xl" />,
-      description: 'Building fast and engaging user experiences using React.js and Next.js for modern web applications.',
-      tech: ['React.js', 'Next.js', 'Tailwind CSS', 'TypeScript'],
+      description: 'Building fast and engaging user experiences using React.js, Next.js, and Nuxt.js for modern web applications.',
+      tech: ['React.js', 'Next.js', 'Nuxt.js', 'TypeScript', 'Tailwind CSS'],
+    },
+    {
+      category: 'Mobile',
+      icon: <FaMobileAlt className="text-2xl" />,
+      description: 'Developing cross-platform mobile applications with Kotlin Multiplatform (KMP) and Flutter for iOS and Android.',
+      tech: ['Kotlin Multiplatform', 'Flutter', 'Dart', 'Kotlin'],
     },
     {
       category: 'Backend',
       icon: <FaServer className="text-2xl" />,
-      description: 'Creating robust backend systems with Laravel and Node.js, focused on performance, scalability, and security.',
-      tech: ['Laravel', 'Node.js', 'Express', 'PostgreSQL'],
+      description: 'Creating robust backend systems with Laravel, Node.js, and Rust, focused on performance, scalability, and security.',
+      tech: ['Laravel', 'Node.js', 'Rust', 'Express', 'PostgreSQL'],
     },
     {
       category: 'Blockchain',
@@ -31,7 +37,7 @@ export default function StackPage() {
       category: 'Cyber Security',
       icon: <FaShieldAlt className="text-2xl" />,
       description: 'Offering cybersecurity services to protect your applications, infrastructure, and data from modern threats.',
-      tech: ['Penetration Testing', 'OWASP', 'Encryption', 'Zero Trust'],
+      tech: ['Penetration Testing', 'OWASP', 'Encryption', 'Digital Forensics', 'Zero Trust'],
     },
     {
       category: 'Data Analysis',
@@ -46,25 +52,25 @@ export default function StackPage() {
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="pt-20 md:pt-28 lg:pt-32 pb-8 md:pb-12">
-  <div className="text-center max-w-4xl mx-auto px-4">
-    <div className="flex items-center justify-center gap-2 mb-4 md:mb-5">
-      <span className="h-[2px] w-6 md:w-10 bg-blue-900"></span>
-      <span className="text-blue-900 font-semibold tracking-[0.15em] text-xs md:text-sm uppercase">
-        My Capabilities
-      </span>
-      <span className="h-[2px] w-6 md:w-10 bg-blue-900"></span>
-    </div>
-    
-    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-3 md:mb-4 leading-tight">
-      Technology Stack
-    </h1>
-    
-    <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2">
-      Delivering modern digital solutions with a strong foundation in frontend, backend, 
-      security, blockchain, and data.
-    </p>
-  </div>
-</div>
+          <div className="text-center max-w-4xl mx-auto px-4">
+            <div className="flex items-center justify-center gap-2 mb-4 md:mb-5">
+              <span className="h-[2px] w-6 md:w-10 bg-blue-900"></span>
+              <span className="text-blue-900 font-semibold tracking-[0.15em] text-xs md:text-sm uppercase">
+                My Capabilities
+              </span>
+              <span className="h-[2px] w-6 md:w-10 bg-blue-900"></span>
+            </div>
+            
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-3 md:mb-4 leading-tight">
+              Technology Stack
+            </h1>
+            
+            <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-2">
+              Delivering modern digital solutions with a strong foundation in frontend, mobile, 
+              backend, security, blockchain, and data.
+            </p>
+          </div>
+        </div>
 
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-10 overflow-x-auto pb-2">

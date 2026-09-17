@@ -7,7 +7,7 @@ const services = [
   { 
     id: 1, 
     name: "Mobile & Web Solutions", 
-    description: "Building responsive, high-performance mobile and web applications for iOS, Android, and the modern web.",
+    description: "Building responsive, high-performance mobile and web applications with React, Next.js, Nuxt.js, Kotlin Multiplatform (KMP), and Flutter.",
     image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757871/web_yroiac.jpg"
   },
   { 
@@ -19,13 +19,13 @@ const services = [
   { 
     id: 3, 
     name: "Cyber Security & Forensics", 
-    description: "Protecting systems and data through security audits, threat analysis, and digital forensic investigations.",
+    description: "Protecting systems and data through penetration testing, security audits, threat analysis, and digital forensic investigations.",
     image: "https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   { 
     id: 4, 
     name: "Backend Development", 
-    description: "Developing robust server-side logic, APIs, and database management for seamless application functionality.",
+    description: "Developing robust server-side logic, APIs, and database management using Laravel, Node.js, and Rust for seamless application functionality.",
     image: "https://res.cloudinary.com/df64ucx5w/image/upload/v1782757869/web3_a1hqvb.jpg"
   },
   { 

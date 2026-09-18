@@ -41,9 +41,8 @@ export default function ServicesCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [yearsOfExperience, setYearsOfExperience] = useState(5);
 
-  // Calculate years of experience based on current year
   useEffect(() => {
-    const startYear = 2021; // Started in 2021
+    const startYear = 2021; 
     const currentYear = new Date().getFullYear();
     const experience = currentYear - startYear;
     setYearsOfExperience(experience);
